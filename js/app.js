@@ -52,7 +52,7 @@ const showPhonesOnSite = (data) => {
         <h5 class="card-title">${phone.phone_name}</h5>
         <p class="card-text">
         Brand: ${phone.brand} <br>
-        <button class="moreBtn border-0 px-2 mt-2">More</button>
+        <button onclick="showMore('${phone.slug}')" class="moreBtn border-0 px-2 mt-2">More</button>
         </p>
       </div>
     </div>
@@ -61,4 +61,12 @@ const showPhonesOnSite = (data) => {
     });
     error.innerText = "";
   }
+};
+
+const showMore = (phoneID) => {
+  const url = `https://openapi.programming-hero.com/api/phone/${phoneID}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+  //   console.log(phoneID);
 };
