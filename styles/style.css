@@ -13,3 +13,9 @@ body {
   margin-top: 70px;
   color: gray;
 }
+.moreBtn {
+  background-color: blueviolet;
+  border-radius: 5px;
+  font-weight: 500;
+  color: aliceblue;
+}
