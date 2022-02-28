@@ -33,26 +33,54 @@ const getPhones = () => {
 </div>; */
 }
 
+// // SHOWIGN PHONES ON SITE
+// const showPhonesOnSite = (phones) => {
+//   phones.forEach((phone) => {
+//     // console.log(phone);
+//     const phoneDiv = document.createElement("div");
+//     phoneDiv.classList.add("col");
+//     phoneDiv.classList.add("phoneCards");
+//     phoneDiv.innerHTML = `
+//     <div class="card h-100 phoneCards">
+//     <div class=" d-flex justify-content-center">
+//     <img src="${phone.image}" class="card-img-top p-2 w-75" alt="..." />
+//     </div>
+//     <div class="card-body">
+//       <h5 class="card-title">${phone.phone_name}</h5>
+//       <p class="card-text">
+//         This is a longer card with supporting text below as a natural lead-in to
+//         additional content. This content is a little bit longer.
+//       </p>
+//     </div>
+//   </div>
+//     `;
+//     phonesContainer.appendChild(phoneDiv);
+//   });
+// };
+
 // SHOWIGN PHONES ON SITE
 const showPhonesOnSite = (phones) => {
-  phones.forEach((phone) => {
-    // console.log(phone);
+  for (let i = 0; i < 20; i++) {
     const phoneDiv = document.createElement("div");
     phoneDiv.classList.add("col");
+    phoneDiv.classList.add("phoneCards");
     phoneDiv.innerHTML = `
-    <div class="card h-100">
-    <div class=" d-flex justify-content-center">
-    <img src="${phone.image}" class="card-img-top p-2 w-75" alt="..." />
+      <div class="card h-100 phoneCards">
+      <div class=" d-flex justify-content-center">
+      <img src="${phones[i].image}" class="card-img-top p-2 w-75" alt="..." />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">${phones[i].phone_name}</h5>
+        <p class="card-text">
+          This is a longer card with supporting text below as a natural lead-in to
+          additional content. This content is a little bit longer.
+        </p>
+      </div>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">${phone.phone_name}</h5>
-      <p class="card-text">
-        This is a longer card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </p>
-    </div>
-  </div>
-    `;
+      `;
     phonesContainer.appendChild(phoneDiv);
-  });
+  }
+  //   phones.forEach((phone) => {
+  //     // console.log(phone);
+  //   });
 };

@@ -4,3 +4,12 @@ body {
 #searchBtn {
   font-weight: 500;
 }
+.phoneCards {
+  border-radius: 10px;
+  padding-top: 8px;
+}
+
+#error {
+  margin-top: 70px;
+  color: gray;
+}
