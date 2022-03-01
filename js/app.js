@@ -1,3 +1,7 @@
+// SINNER DIV
+let spinner = document.getElementById("spinner");
+spinner.style.display = "none";
+
 //   GETTING INPUT FIELD VALUE
 const inputField = document.getElementById("inputField");
 
@@ -12,6 +16,7 @@ const error = document.getElementById("error");
 
 // LOADING DATA AND BY SEARCH
 const getPhones = () => {
+  spinner.style.display = "block";
   if (inputField.value === "") {
     error.innerText = "Please enter a name!";
     // CLEARING PHONE DETAIL CONTAINER
@@ -39,6 +44,7 @@ const showPhonesOnSite = (data) => {
     error.innerText = "No match found!";
     // CLEARING PHONE CONTAINER
     phonesContainer.textContent = "";
+    spinner.style.display = "none";
   } else {
     const first20Phones = phones.slice(0, 20);
     first20Phones.forEach((phone) => {
@@ -59,6 +65,7 @@ const showPhonesOnSite = (data) => {
       </div>
     </div>
       `;
+      spinner.style.display = "none";
       phonesContainer.appendChild(phoneDiv);
     });
     // CLEARING ERROR MASSAGE
@@ -80,23 +87,14 @@ const showDetail = (phone) => {
   phoneDetailContainer.textContent = "";
   // GETTIGN DATA FROM PHONES DETAIL OBJ
   const name = phone.data.name;
-  console.log(name);
   const releaseDate = phone.data.releaseDate;
-  console.log(releaseDate);
   const brand = phone.data.brand;
-  console.log(brand);
   const image = phone.data.image;
-  console.log(image);
   const chipSet = phone.data.mainFeatures.chipSet;
-  console.log(chipSet);
   const displaySize = phone.data.mainFeatures.displaySize;
-  console.log(displaySize);
   const memory = phone.data.mainFeatures.memory;
-  console.log(memory);
   const sensors = phone.data.mainFeatures.sensors.join(", ");
-  console.log(sensors);
   const storage = phone.data.mainFeatures.storage;
-  console.log(storage);
 
   let bluetooth = phone.data.others?.Bluetooth;
   let GPS = phone.data.others?.GPS;
@@ -119,8 +117,6 @@ const showDetail = (phone) => {
   } else if (WLAN === undefined) {
     WLAN = "not found";
   }
-
-  console.log(phone);
 
   const phoneDetailDiv = document.createElement("div");
   phoneDetailDiv.classList.add("row");

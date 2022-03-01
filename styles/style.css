@@ -45,6 +45,12 @@ body {
 .phonePica {
   color: rgb(125, 36, 226);
 }
-/* #pica {
-  color: rgb(91, 34, 165);
-} */
+
+/* SPINNER */
+.spinner {
+  color: rgb(125, 36, 226);
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
