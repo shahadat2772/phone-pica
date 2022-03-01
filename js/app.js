@@ -125,35 +125,23 @@ const showDetail = (phone) => {
   const phoneDetailDiv = document.createElement("div");
   phoneDetailDiv.classList.add("row");
   phoneDetailDiv.classList.add("justify-content-center");
+  phoneDetailDiv.classList.add("mb-4");
 
   phoneDetailDiv.innerHTML = `
-  <!-- Phone Card -->
-  <div class="col-lg-4 d-flex justify-content-center">
-    <div
-      class="card h-100 PhoneDetailcommonColor p-2"
-      style="width: 18rem"
-    >
-      <div class="bg-white text-center py-3">
-        <img
-          src="${image}"
-          class="card-img-top img-fluid w-50"
-          alt="..."
-        />
+  <!-- MAIN FEATURES  -->
+  <div class="col-lg-7 ">
+    <div class="row PhoneDetailcommonColor roundedCorner">
+      <div class="col-lg-12 ">
+        <div class="row m-2 borderRadiusTop mb-0 bg-white p-2 justify-content-center">
+         <div class="col-lg-8">
+         <div class="text-center">
+           <img class="w-75" src="${image}" alt="" />
+          <h5 class="mb-0 mt-2">${name}</h5>
+          <p>${releaseDate}</p>
+         </div>
+         </div>
+        </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">${name}</h5>
-        <p class="card-text">
-          <i class="fa-solid fa-calendar-day"></i> ${releaseDate} <br />
-          Sensors: ${sensors} <br />
-          Brand: ${brand}
-        </p>
-      </div>
-    </div>
-  </div>
-  <!-- Phone Card END -->
-  <!-- MAIN FEATURE  -->
-  <div class="col-lg-6">
-    <div class="row PhoneDetailcommonColor">
       <div class="col-lg-12">
         <div class="row m-2 mb-0 bg-white p-2">
           <div class="col-lg-4 text-center">
@@ -198,7 +186,17 @@ const showDetail = (phone) => {
         </div>
       </div>
       <div class="col-lg-12">
-        <div class="row m-2  bg-white p-2">
+        <div class="row m-2 mb-0 bg-white p-2">
+          <div class="col-lg-4 text-center">
+            <h3 class="mb-0">SENSORS-</h3>
+          </div>
+          <div class="col-lg-8">
+            ${sensors}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="row m-2 borderRadiusBottom bg-white p-2">
           <div class="col-lg-4 text-center">
             <h3 class="mb-0">OTHERS-</h3>
           </div>

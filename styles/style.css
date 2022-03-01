@@ -28,3 +28,18 @@ body {
 .PhoneDetailcommonColor {
   background-color: #d6d1d1;
 }
+
+.roundedCorner {
+  border-radius: 8px;
+}
+
+/* Border Bottom and Top Radius for Detail inner */
+.borderRadiusTop {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.borderRadiusBottom {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
