@@ -107,15 +107,20 @@ const showDetail = (phone) => {
   //   REPLAECE, IF UNDEFIND
   if (bluetooth === undefined) {
     bluetooth = "not found";
-  } else if (GPS === undefined) {
+  }
+  if (GPS === undefined) {
     GPS = "not found";
-  } else if (NFC === undefined) {
+  }
+  if (NFC === undefined) {
     NFC = "not found";
-  } else if (Radio === undefined) {
+  }
+  if (Radio === undefined) {
     Radio = "not found";
-  } else if (USB === undefined) {
+  }
+  if (USB === undefined) {
     USB = "not found";
-  } else if (WLAN === undefined) {
+  }
+  if (WLAN === undefined) {
     WLAN = "not found";
   }
 
