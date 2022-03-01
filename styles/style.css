@@ -1,8 +1,9 @@
 body {
-  background-color: #dcdcdc;
+  background-color: #dcdcdca9;
 }
 #searchBtn {
   font-weight: 500;
+  color: rgb(132, 0, 255);
 }
 .phoneCards {
   border-radius: 10px;
@@ -13,22 +14,19 @@ body {
   margin-top: 70px;
   color: gray;
 }
+/* MORE BUTTON COLOR */
 .moreBtn {
   background-color: blueviolet;
   border-radius: 5px;
   font-weight: 500;
   color: aliceblue;
 }
-
-.phoneDetailRow {
-  background-color: #ffffff;
-  padding: 10px;
-}
-
+/* BG COLOR FOR PHONE DETAIL CONTAIENER */
 .PhoneDetailcommonColor {
   background-color: #d6d1d1;
 }
 
+/* BORDER RADIUS FOR DETAIL CONRAIENR */
 .roundedCorner {
   border-radius: 8px;
 }
@@ -43,3 +41,10 @@ body {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+
+.phonePica {
+  color: rgb(125, 36, 226);
+}
+/* #pica {
+  color: rgb(91, 34, 165);
+} */

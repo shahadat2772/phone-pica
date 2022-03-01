@@ -1,10 +1,3 @@
-// DEMO
-// fetch(
-//   "https://openapi.programming-hero.com/api/phone/apple_iphone_13_mini-11104"
-// )
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));
-
 //   GETTING INPUT FIELD VALUE
 const inputField = document.getElementById("inputField");
 
@@ -14,13 +7,17 @@ const phonesContainer = document.getElementById("phonesContainer");
 // PHONE DETAIL CONTAINER
 const phoneDetailContainer = document.getElementById("phoneDetailContainer");
 
-// ERROR MASSASE DIV
+// ERROR MASSASE
 const error = document.getElementById("error");
 
 // LOADING DATA AND BY SEARCH
 const getPhones = () => {
   if (inputField.value === "") {
     error.innerText = "Please enter a name!";
+    // CLEARING PHONE DETAIL CONTAINER
+    phoneDetailContainer.textContent = "";
+    // CLEARING PHONE CONTAINER
+    phonesContainer.textContent = "";
   } else {
     const url = `https://openapi.programming-hero.com/api/phones?search=${inputField.value}`;
     fetch(url)
@@ -33,10 +30,11 @@ const getPhones = () => {
 
 // SHOWIGN PHONES ON SITE
 const showPhonesOnSite = (data) => {
+  // CLEARING PHONE DETAIL CONTAINER
+  phoneDetailContainer.textContent = "";
   // CLEARING PHONE CONTAINER
   phonesContainer.textContent = "";
   const phones = data.data;
-  //   console.log(phones);
   if (data.status === false) {
     error.innerText = "No match found!";
     // CLEARING PHONE CONTAINER
@@ -44,7 +42,6 @@ const showPhonesOnSite = (data) => {
   } else {
     const first20Phones = phones.slice(0, 20);
     first20Phones.forEach((phone) => {
-      // console.log(phone);
       const phoneDiv = document.createElement("div");
       phoneDiv.classList.add("col");
       phoneDiv.classList.add("phoneCards");
@@ -64,6 +61,7 @@ const showPhonesOnSite = (data) => {
       `;
       phonesContainer.appendChild(phoneDiv);
     });
+    // CLEARING ERROR MASSAGE
     error.innerText = "";
   }
 };
@@ -74,12 +72,13 @@ const showMore = (phoneID) => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => showDetail(data));
-  //   console.log(phoneID);
 };
 
 // SWOING DETAILE OF INDIVISUAL PHONE
 const showDetail = (phone) => {
-  // GETTIGN DATA FROM PHONEs DETAIL OBJ
+  // CLEARING PHOEN DETAIL CONRAINER
+  phoneDetailContainer.textContent = "";
+  // GETTIGN DATA FROM PHONES DETAIL OBJ
   const name = phone.data.name;
   console.log(name);
   const releaseDate = phone.data.releaseDate;
@@ -106,6 +105,7 @@ const showDetail = (phone) => {
   let USB = phone.data.others?.USB;
   let WLAN = phone.data.others?.WLAN;
 
+  //   REPLAECE, IF UNDEFIND
   if (bluetooth === undefined) {
     bluetooth = "not found";
   } else if (GPS === undefined) {
