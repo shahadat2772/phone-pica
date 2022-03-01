@@ -1,5 +1,7 @@
 // DEMO
-fetch("https://openapi.programming-hero.com/api/phones?search=iphone")
+fetch(
+  "https://openapi.programming-hero.com/api/phone/apple_iphone_13_mini-11104"
+)
   .then((res) => res.json())
   .then((data) => console.log(data));
 
@@ -63,10 +65,16 @@ const showPhonesOnSite = (data) => {
   }
 };
 
+// GETTING DETAILE OF INDIVISUAL PHONE
 const showMore = (phoneID) => {
   const url = `https://openapi.programming-hero.com/api/phone/${phoneID}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => showDetail(data));
   //   console.log(phoneID);
+};
+
+// SWOING DETAILE OF INDIVISUAL PHONE
+const showDetail = (data) => {
+  console.log(data);
 };
