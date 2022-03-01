@@ -123,6 +123,9 @@ const showDetail = (phone) => {
   if (WLAN === undefined) {
     WLAN = "not found";
   }
+  if (releaseDate === undefined) {
+    releaseDate = "no release date found";
+  }
 
   const phoneDetailDiv = document.createElement("div");
   phoneDetailDiv.classList.add("row");
