@@ -98,23 +98,30 @@ const showDetail = (phone) => {
   console.log(sensors);
   const storage = phone.data.mainFeatures.storage;
   console.log(storage);
-  const others = phone.data.others;
-  //   const dataInOthers = Object.keys(others);
-  //   //   const info = Object.entries(others);
-  //   //   let infoArray = [];
-  //   //   for (const [key, value] of Object.entries(others)) {
-  //   //     infoArray.push(key, value);
-  //   //   }
 
-  //   //   const infoArrayData = infoArray.join(",");
+  let bluetooth = phone.data.others?.Bluetooth;
+  let GPS = phone.data.others?.GPS;
+  let NFC = phone.data.others?.NFC;
+  let Radio = phone.data.others?.Radio;
+  let USB = phone.data.others?.USB;
+  let WLAN = phone.data.others?.WLAN;
 
-  //   for (const data of dataInOthers) {
-  //     console.log(data, ":", others[data]);
-  //   }
-
-  console.log(others);
+  if (bluetooth === undefined) {
+    bluetooth = "not found";
+  } else if (GPS === undefined) {
+    GPS = "not found";
+  } else if (NFC === undefined) {
+    NFC = "not found";
+  } else if (Radio === undefined) {
+    Radio = "not found";
+  } else if (USB === undefined) {
+    USB = "not found";
+  } else if (WLAN === undefined) {
+    WLAN = "not found";
+  }
 
   console.log(phone);
+
   const phoneDetailDiv = document.createElement("div");
   phoneDetailDiv.classList.add("row");
   phoneDetailDiv.classList.add("justify-content-center");
@@ -193,10 +200,15 @@ const showDetail = (phone) => {
       <div class="col-lg-12">
         <div class="row m-2  bg-white p-2">
           <div class="col-lg-4 text-center">
-            <h3 class="mb-0">OTHERS</h3>
+            <h3 class="mb-0">OTHERS-</h3>
           </div>
           <div class="col-lg-8">
-            <!-- <i class="fa-solid fa-microchip display-4"></i> -->
+          <p>Bluetooth: ${bluetooth}</p>
+          <p>GPS: ${GPS}</p>
+          <p>NFC: ${NFC}</p>
+          <p>Radio: ${Radio}</p>
+          <p>USB: ${USB}</p>
+          <p>WLAN: ${WLAN}</p>
           </div>
         </div>
       </div>
@@ -208,94 +220,3 @@ const showDetail = (phone) => {
   //   APPENDING DETAIL DIV TO IT"S PARANT
   phoneDetailContainer.appendChild(phoneDetailDiv);
 };
-
-{
-  /* <div class="row justify-content-center">
-          <!-- Phone Card -->
-          <div class="col-lg-4 d-flex justify-content-center">
-            <div
-              class="card h-100 PhoneDetailcommonColor p-2"
-              style="width: 18rem"
-            >
-              <div class="bg-white text-center py-3">
-                <img
-                  src="apple-iphone-13-mini.jpg"
-                  class="card-img-top img-fluid w-50"
-                  alt="..."
-                />
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  <i class="fa-solid fa-calendar-day"></i> 12/122/43 <br />
-                  Sensors: Face ID, accelerometer, gyro, proximity, compass,
-                  barometer<br />
-                  Brand:
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Phone Card END -->
-          <!-- MAIN FEATURE  -->
-          <div class="col-lg-6">
-            <div class="row PhoneDetailcommonColor">
-              <div class="col-lg-12">
-                <div class="row m-2 mb-0 bg-white p-2">
-                  <div class="col-lg-4 text-center">
-                    <i class="fa-solid fa-microchip display-4"></i>
-                    <h6 class="mb-0">CHIP</h6>
-                  </div>
-                  <div class="col-lg-8">
-                    <!-- <i class="fa-solid fa-microchip display-4"></i> -->
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="row m-2 mb-0 bg-white p-2">
-                  <div class="col-lg-4 text-center">
-                    <i class="fa-solid fa-camera display-5"></i>
-                    <h6 class="mb-0">CAMERA</h6>
-                  </div>
-                  <div class="col-lg-8">
-                    <!-- <i class="fa-solid fa-microchip display-4"></i> -->
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="row m-2 mb-0 bg-white p-2">
-                  <div class="col-lg-4 text-center">
-                    <i class="fa-solid fa-memory display-5"></i>
-                    <h6 class="mb-0">MEMORY</h6>
-                  </div>
-                  <div class="col-lg-8">
-                    <!-- <i class="fa-solid fa-microchip display-4"></i> -->
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="row m-2 mb-0 bg-white p-2">
-                  <div class="col-lg-4 text-center">
-                    <i class="fa-solid fa-database display-5"></i>
-                    <h6 class="mb-0">STORAGE</h6>
-                  </div>
-                  <div class="col-lg-8">
-                    <!-- <i class="fa-solid fa-microchip display-4"></i> -->
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="row m-2 bg-white p-2">
-                  <div class="col-lg-4 text-center">
-                    <!-- <i class="fa-solid fa-database display-5"></i> -->
-                    <h3 class="mb-0">DISPLAY-</h3>
-                  </div>
-                  <div class="col-lg-8">
-                    <!-- <i class="fa-solid fa-microchip display-4"></i> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- MAIN FEATUR COL ENDS -->
-        </div> */
-}
