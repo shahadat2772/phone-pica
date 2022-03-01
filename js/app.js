@@ -18,6 +18,7 @@ const error = document.getElementById("error");
 const getPhones = () => {
   spinner.style.display = "block";
   if (inputField.value === "") {
+    spinner.style.display = "none";
     error.innerText = "Please enter a name!";
     // CLEARING PHONE DETAIL CONTAINER
     phoneDetailContainer.textContent = "";
